@@ -8,14 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
 
       - name: Download Termux bootstrap
         run: |
@@ -23,10 +23,10 @@ jobs:
           curl -L -o app/src/main/assets/bootstrap-aarch64.zip \
             https://github.com/termux/termux-packages/releases/download/bootstrap-2024.10.28-r1/bootstrap-aarch64.zip
 
-      - uses: gradle/actions/setup-gradle@v3
+      - uses: gradle/actions/setup-gradle@v4
 
       - name: Build debug APK
-        run: gradle assembleDebug
+        run: gradle :app:assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
