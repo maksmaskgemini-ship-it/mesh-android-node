@@ -12,7 +12,7 @@ import java.io.File
 
 class MainActivity : AppCompatActivity() {
     private lateinit var webView: WebView
-    private val PWA_URL = "http://100.73.128.2:8000/app/"
+    private val PWA_URL = "http://100.73.128.2:8001/app/"
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
